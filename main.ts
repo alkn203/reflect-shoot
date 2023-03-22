@@ -44,11 +44,6 @@ phina.define('MainScene', {
     if (Collision.testCircleLine(circle, p1, p2)) {
       // 線分の法線ベクトル（正規化）
       var n = Vector2.normal(p1, p2).normalize();
-      // 線分上の一番近い点 
-      //var point = this.nearest(p1, p2, Vector2(circle.x, circle.y));
-      // めり込まないように補正
-      //this.circle.x = point.x + n.x * circle.radius;
-      //this.circle.y = point.y + n.y * circle.radius;
       // 反射ベクトル
       var r = Vector2.reflect(this.circle.physical.velocity, n);
       this.circle.physical.velocity = r;
